@@ -1,7 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const Myapp());
@@ -15,6 +17,7 @@ class Myapp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeApp(),
+      
       theme: ThemeData(
           fontFamily: GoogleFonts.poppins().fontFamily,
           primarySwatch: Colors.lightBlue),
@@ -56,9 +59,10 @@ class HomeApp extends StatelessWidget {
                   // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     Column(
+                      // ignore: prefer_const_literals_to_create_immutables
                       children: [
-                        Text(
-                          'Nirmal Nyure',
+                        const Text(
+                          'Nirmal ',
                           style: TextStyle(
                             fontSize: 50.0,
                             fontWeight: FontWeight.bold,
@@ -112,13 +116,25 @@ class Projects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 500,
-      height: 500,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade400,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      // child:Stack(children: [Image.asset(name)],)
+      height: 300,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          itemCount: 15,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                width: 300,
+                height: 300,
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade400,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                // child:Stack(children: [Image.asset(name)],)
+              ),
+            );
+          }),
     );
   }
 }
