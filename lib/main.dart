@@ -21,6 +21,7 @@ class Myapp extends StatelessWidget {
       theme: ThemeData(
           fontFamily: GoogleFonts.poppins().fontFamily,
           primarySwatch: Colors.lightBlue),
+      darkTheme: ThemeData.dark(),
     );
   }
 }
